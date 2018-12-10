@@ -4,10 +4,17 @@ import { defaultStyle } from 'substyle'
 
 const styled = defaultStyle({
   fontWeight: 'inherit',
+  position: 'relative',
+  zIndex:1,
+  backgroundColor: '#fff',
+  color: "#000",
+  padding: '0 2px'
 })
 
-const Mention = styled(({ display, style }) => (
-  <strong {...style}>{display}</strong>
+const Mention = styled(({ display, style, type,id, onClick }) => (
+  <strong {...style} onClick={()=>{
+    onClick({display, id, type})
+  }}>{display}</strong>
 ))
 
 Mention.propTypes = {
@@ -24,6 +31,7 @@ Mention.propTypes = {
    */
   onAdd: PropTypes.func,
   onRemove: PropTypes.func,
+  onClick: PropTypes.func,
 
   renderSuggestion: PropTypes.func,
 
@@ -40,6 +48,7 @@ Mention.defaultProps = {
 
   onAdd: () => null,
   onRemove: () => null,
+  onClick: () => null,
   renderSuggestion: null,
   isLoading: false,
   appendSpaceOnAdd: false,

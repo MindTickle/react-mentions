@@ -2960,8 +2960,7 @@ var styled = Object(__WEBPACK_IMPORTED_MODULE_2_substyle__["defaultStyle"])({
   position: 'relative',
   zIndex: 1,
   backgroundColor: '#fff',
-  color: "#000",
-  padding: '0 2px'
+  color: "#000"
 });
 
 var Mention = styled(function (_ref) {
